@@ -13,14 +13,14 @@ $(document).ready(function(){
     let name = $('#name').val();
 
     function searchResults(response){
-      if (response == null) {
+      if (response.data.length == 0) {
         $(".result").text("no search results")
       }
 
       for (let i=0; i<response.data.length; i++){
-        $(".result").append('<li>Name:${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</li>}')
+        $('.result').append('<li>Name:${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</li>}')
       }
     }
-    Doctor.showStats(name, illness);
+    Doctor.showStats(name, illness, searchResults);
   });
 });
