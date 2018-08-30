@@ -23,7 +23,7 @@ console.log(doctor);
       }
 
       for (let i=0; i<response.data.length; i++){
-        $('.result').append('<p>Name: '+response.data[i].profile.first_name + response.data[i].profile.last_name+ ' </p>')
+        $('.result').append('<li>Name: '+response.data[i].profile.first_name + ' ' + response.data[i].profile.last_name+ ' </li>  <li>Available: '+response.data[i].practices[0].accepts_new_patients+'</li> <li>Phone Number: '+response.data[i].practices[0].phones[0].number+'</li><li>Website: '+response.data[i].practices[0].website+'</li><li>Address: '+response.data[i].practices[0].visit_address.street+' '+response.data[i].practices[0].visit_address.city+'</li><br><br>')
 
       }
     }
