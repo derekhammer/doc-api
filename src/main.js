@@ -9,18 +9,20 @@ $(document).ready(function(){
     $('#query').val("");
     $('#name').val("");
 
-    let illness= $('#query').val();
+    let query= $('#query').val();
     let name = $('#name').val();
 
     function searchResults(response){
       if (response.data.length == 0) {
         $(".result").text("no search results")
+
       }
 
       for (let i=0; i<response.data.length; i++){
-        $('.result').append('<li>Name:${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</li>}')
+        $('.result').append('<p>Name:${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</p>}')
+
       }
     }
-    Doctor.showStats(name, illness, searchResults);
+    Doctor.showStats(name, query, searchResults);
   });
 });
